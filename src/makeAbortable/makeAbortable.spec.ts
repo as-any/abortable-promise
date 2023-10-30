@@ -61,8 +61,9 @@ describe('makeAbortable', () => {
   })
 
   describe('when involved in a Long Promise Chain', () => {
-    let OriginalPromise = (global as any).Promise
+    let OriginalPromise: any = global.Promise
     let promiseInstanceCounter = 0
+    const timers: NodeJS.Timeout[] = []
 
     beforeEach(() => {
       OriginalPromise = (global as any).Promise
@@ -77,6 +78,7 @@ describe('makeAbortable', () => {
     afterEach(() => {
       (global as any).Promise = OriginalPromise
       promiseInstanceCounter = 0
+      timers.forEach(t => { clearTimeout(t) })
     })
 
     it('should abort entire promise chain of 100 after some time', async () => {
@@ -84,16 +86,20 @@ describe('makeAbortable', () => {
       const { signal } = controller
 
       let chain = new Promise<string>((resolve) => {
-        setTimeout(() => {
+        const timeout = setTimeout(() => {
           resolve('start')
         }, 10)
+
+        timers.push(timeout)
       })
 
       const appendIndex = (input: string, index: number, signal: AbortSignal): Promise<string> => {
         return new Promise<string>((resolve) => {
-          setTimeout(() => {
+          const timeout = setTimeout(() => {
             resolve(`${input} -> ${index}`)
           }, 10)
+
+          timers.push(timeout)
         })
       }
 
@@ -107,12 +113,13 @@ describe('makeAbortable', () => {
         expect(error.name).toBe('AbortError')
       })
 
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         controller.abort()
       }, 400)
+      timers.push(timeout)
 
       await expect(chain).rejects.toThrow('This operation was aborted')
       expect(promiseInstanceCounter).toBeLessThan(41)
-    }, 1000)
+    }, 600)
   })
 })
