@@ -44,6 +44,9 @@
   },
   "homepage": "https://github.com/as-any/abortable-promise#readme",
   "main": "index.js",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
