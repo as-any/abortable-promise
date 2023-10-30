@@ -3,6 +3,7 @@
         "tsconfig.json",
         "AbortablePromise",
         "makeAbortable",
-        "vscode-settings"
+        "vscode-settings",
+        "eslint"
     ]
 }

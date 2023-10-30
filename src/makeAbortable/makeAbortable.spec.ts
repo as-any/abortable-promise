@@ -25,7 +25,7 @@ describe('makeAbortable', () => {
     const { signal } = controller
     const errorMessage = 'Some other error'
 
-    const failingPromise = new Promise<string>((_, reject) => {
+    const failingPromise = new Promise<string>((_, reject) => { // eslint-disable-line promise/param-names
       setTimeout(() => { reject(new Error(errorMessage)) }, 100)
     })
 
