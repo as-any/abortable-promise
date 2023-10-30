@@ -1,6 +1,8 @@
 {
     "conventionalCommits.scopes": [
         "tsconfig.json",
-        "AbortablePromise"
+        "AbortablePromise",
+        "makeAbortable",
+        "vscode-settings"
     ]
 }
