@@ -1,0 +1,50 @@
+{
+  "name": "@as-any/abortable-promise",
+  "version": "0.0.0",
+  "description": "An extension of native Promises with true abort capabilities via AbortSignal.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/as-any/abortable-promise.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "JavaScript",
+    "Promise",
+    "AbortablePromise",
+    "CancelablePromise",
+    "AbortSignal",
+    "AbortController",
+    "promise-chain",
+    "asynchronous",
+    "abort",
+    "cancel",
+    "async",
+    "await",
+    "thenable",
+    "callbacks",
+    "open-source",
+    "exception",
+    "flow-control",
+    "concurrency",
+    "reactive",
+    "real-time",
+    "nodejs",
+    "browser",
+    "web-development",
+    "backend",
+    "frontend"
+  ],
+  "author": {
+    "name": "v-zo",
+    "email": "v-zo@doomsoft.dev"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/as-any/abortable-promise/issues"
+  },
+  "homepage": "https://github.com/as-any/abortable-promise#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
