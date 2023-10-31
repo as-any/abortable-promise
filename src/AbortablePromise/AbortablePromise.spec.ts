@@ -17,4 +17,22 @@ describe('AbortablePromise', () => {
     controller.abort()
     await expect(promise).rejects.toThrowError()
   })
+
+  it('should reject immediately if AbortSignal is already aborted', async () => {
+    const controller = new AbortController()
+    controller.abort()
+
+    const myPromise = new AbortablePromise(
+      (resolve, reject) => {
+        fail('The executor should not be invoked')
+      },
+      controller.signal
+    )
+
+    try {
+      await expect(myPromise).rejects.toThrow()
+    } catch (err: any) {
+      expect(err.name).toBe('AbortError')
+    }
+  })
 })
