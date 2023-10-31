@@ -30,7 +30,7 @@ Then call `abort()` method
 controller.abort();
 ```
 
-Error handling can be done using the catch method just like regular promises:
+Error handling can be done using the `catch`` method just like with regular promises:
 
 ```typescript
 myAbortablePromise.catch(reason => {
@@ -39,7 +39,23 @@ myAbortablePromise.catch(reason => {
 ```
 
 
-By default `AbortablePromise` rejects with ["AbortError" DOMException](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort#parameters). Pass to `controller.abort()` any custom object you want to be promise rejected with.
+By default, `AbortablePromise` rejects with an ["AbortError" DOMException](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort#parameters) if is aborted:
+
+```typescript
+setTimeout(() => controller.abort(), 1000);
+
+try {
+    await myAbortablePromise;
+  } catch (err) {
+    if (err.name === 'AbortError') {
+      console.log("Operation aborted: ", err.message);
+    }
+    console.log("Error occurred: ", err);
+  }
+
+```
+
+Pass to `controller.abort()` any custom object you want to be promise rejected with:
 
 ```typescript
 myAbortablePromise.catch(reason => {
