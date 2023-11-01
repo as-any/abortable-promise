@@ -2,7 +2,7 @@
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "module": "CommonJS",
-        "outDir": "../lib/commonjs",
+        "outDir": "../lib/cjs",
         "declaration": true
     },
     "exclude": [

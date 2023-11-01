@@ -2,7 +2,6 @@
     "compilerOptions": {
       "target": "ES2015",
       "lib": ["ES2015"],
-      "module": "ES2015",
       "moduleResolution": "Node",
       "esModuleInterop": true,
       "forceConsistentCasingInFileNames": true,

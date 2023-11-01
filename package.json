@@ -38,7 +38,10 @@
     "url": "https://github.com/as-any/abortable-promise/issues"
   },
   "homepage": "https://github.com/as-any/abortable-promise#readme",
-  "main": "index.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "unpkg": "lib/umd/index.js",
+  "types": "lib/esm/index.d.ts",
   "devDependencies": {
     "@types/jest": "^29.5.6",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
@@ -56,6 +59,7 @@
     "lint": "eslint 'src/**/*.ts'",
     "compile:cjs": "tsc -p ./configs/tsconfig.cjs.json",
     "compile:esm": "tsc -p ./configs/tsconfig.esm.json",
-    "compile": "npm run compile:cjs && npm run compile:esm"
+    "compile:umd": "tsc -p ./configs/tsconfig.umd.json",
+    "compile": "npm run compile:cjs && npm run compile:esm && npm run compile:umd"
   }
 }
