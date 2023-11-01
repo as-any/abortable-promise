@@ -26,13 +26,8 @@
     "exception",
     "flow-control",
     "concurrency",
-    "reactive",
-    "real-time",
     "nodejs",
-    "browser",
-    "web-development",
-    "backend",
-    "frontend"
+    "browser"
   ],
   "author": {
     "name": "v-zo",
@@ -58,6 +53,9 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint 'src/**/*.ts'"
+    "lint": "eslint 'src/**/*.ts'",
+    "compile:cjs": "tsc -p ./configs/tsconfig.cjs.json",
+    "compile:esm": "tsc -p ./configs/tsconfig.esm.json",
+    "compile": "npm run compile:cjs && npm run compile:esm"
   }
 }

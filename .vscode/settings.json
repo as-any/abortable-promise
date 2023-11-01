@@ -4,6 +4,7 @@
         "AbortablePromise",
         "makeAbortable",
         "vscode-settings",
-        "eslint"
+        "eslint",
+        "package.json"
     ]
 }
