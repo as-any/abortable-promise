@@ -24,13 +24,13 @@ const originalPromise = new Promise((resolve, reject) => {
 const myAbortablePromise = makeAbortable(originalPromise, signal);
 ```
 
-Then call `abort()` method
+Then call the `abort()` method
 
 ```typescript
 controller.abort();
 ```
 
-Error handling can be done using the `catch`` method just like with regular promises:
+Error handling can be done using the `catch` method just like with regular promises:
 
 ```typescript
 myAbortablePromise.catch(reason => {
@@ -39,7 +39,7 @@ myAbortablePromise.catch(reason => {
 ```
 
 
-By default, `AbortablePromise` rejects with an ["AbortError" DOMException](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort#parameters) if is aborted:
+By default, `AbortablePromise` rejects with an ["AbortError" DOMException](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort#parameters) if it is aborted:
 
 ```typescript
 setTimeout(() => controller.abort(), 1000);
@@ -55,7 +55,7 @@ try {
 
 ```
 
-Pass to `controller.abort()` any custom object you want to be promise rejected with:
+Pass any custom object you want the promise to be rejected with to `controller.abort()`:
 
 ```typescript
 myAbortablePromise.catch(reason => {
