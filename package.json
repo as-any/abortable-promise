@@ -1,6 +1,6 @@
 {
   "name": "@as-any/abortable-promise",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "An extension of native Promises with true abort capabilities via AbortSignal.",
   "repository": {
     "type": "git",
