@@ -5,6 +5,7 @@
         "makeAbortable",
         "vscode-settings",
         "eslint",
-        "package.json"
+        "package.json",
+        "release"
     ]
 }
