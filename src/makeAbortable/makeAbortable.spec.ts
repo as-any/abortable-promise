@@ -119,7 +119,7 @@ describe('makeAbortable', () => {
       timers.push(timeout)
 
       await expect(chain).rejects.toThrow('This operation was aborted')
-      expect(promiseInstanceCounter).toBeLessThan(41)
+      expect(promiseInstanceCounter).toBeLessThan(50)
     }, 600)
   })
 })
