@@ -6,6 +6,7 @@
         "vscode-settings",
         "eslint",
         "package.json",
-        "release"
+        "release",
+        "gh-actions"
     ]
 }
