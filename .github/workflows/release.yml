@@ -2,8 +2,6 @@ name: Release on npm
 
 on:
   push:
-    branches:
-      - "main"
     paths:
       - package.json
     tags:
