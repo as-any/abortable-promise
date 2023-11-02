@@ -77,7 +77,7 @@ jobs:
         with:
           tag_name: v${{ steps.publish.outputs.version }}
           release_name: Release v${{ steps.publish.outputs.version }}
-          commitish: ${{ github.ref }}
+          commitish: refs/heads/main
           body_path: ./CHANGELOG.md
           draft: false
           prerelease: false
